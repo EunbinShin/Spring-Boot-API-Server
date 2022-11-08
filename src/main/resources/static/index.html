@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$.ajax({
+			type: "GET",
+			url: "/valueTest",
+			success: (data) => {
+				console.log(data);
+				$('#contents').html(data);
+			},
+			error: () => {
+
+				$('#contents').html('에러');
+			}
+		})
+	</script>
+</head>
+<body>
+	<h1>Hello world!</h1>
+	<div id="contents"></div>
+</body>
+</html>

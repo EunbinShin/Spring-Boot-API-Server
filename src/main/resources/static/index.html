@@ -4,28 +4,38 @@
 	<meta charset="UTF-8">
 	<title>Title</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="contents">
+		  <button type="button" id="submit_button">submit</button>
+	</div>
+	
 	<script>
-		$.ajax({
-			type: "POST",
-			url: "/writeBoard",
-			data: {
-				title: '테스트용 제목입니다',
-				writer: '테스터',
-				content: '테스트 내용입니다~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-			},
-			success: (data) => {
-				console.log(data);
-				$('#contents').html(data);
-			},
-			error: () => {
 
-				$('#contents').html('에러');
+		const button = document.querySelector("#submit_button")
+
+		const data = {
+			boardId: Math.floor(Math.random() * 100000000) + 100000000,
+			boardWriter: 'tester',
+			boardTitle: 'test title',
+			boardContent: 'test content ~~~~~~~~~~~~',
+			boardPassword: '1234'
+		}
+
+		button.addEventListener('click', ()=>{
+			try{
+				fetch("http://localhost:8080/writeBoard",{
+					method: 'POST',
+					headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json' },
+					body: JSON.stringify(data)
+				}).then(res=>res.json)
+				.then(data=>data)
+			}catch(e){
+				console.log(e)
 			}
 		})
 	</script>
-</head>
-<body>
-	<h1>Hello world!</h1>
-	<div id="contents"></div>
 </body>
 </html>

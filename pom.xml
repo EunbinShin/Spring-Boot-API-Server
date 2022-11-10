@@ -47,14 +47,15 @@
 		</dependency>
 		
 		<dependency>
-		   <groupId>org.springframework.boot</groupId>
-		   <artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-		
-		<dependency>
 		    <groupId>org.eclipse.persistence</groupId>
 		    <artifactId>javax.persistence</artifactId>
 		    <version>2.2.0</version>
+		</dependency>
+		
+		<!--  JPA 안 씀
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		
 		<dependency>
@@ -72,7 +73,8 @@
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-jpa</artifactId>
 		</dependency>
-		
+		 -->
+		 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -87,6 +89,14 @@
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-entitymanager</artifactId>
 		</dependency>
+		
+		<!-- firebase START -->
+		<dependency>
+		    <groupId>com.google.firebase</groupId>
+		    <artifactId>firebase-admin</artifactId>
+		    <version>9.1.0</version>
+		</dependency>
+		<!-- firebase END -->
 	</dependencies>
 
 	<build>

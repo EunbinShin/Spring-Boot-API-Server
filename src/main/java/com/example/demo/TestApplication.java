@@ -2,10 +2,11 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
+//@EnableJpaRepositories
 @SpringBootApplication
-@EnableJpaRepositories
+@EnableScheduling // 스케줄링을 하게 해주는 anotation
 public class TestApplication {
 
 	public static void main(String[] args) {

@@ -18,11 +18,13 @@ public class FirebaseConfig {
 			try {
 				FileInputStream serviceAccount = new FileInputStream("src/main/resources/serviceAccountKey.json");
 				
-				FirebaseOptions options = new FirebaseOptions.Builder()
-				  .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-				  .build();
+				FirebaseOptions options = FirebaseOptions.builder()
+						.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+						.setDatabaseUrl("https://spring-boot-api-server-default-rtdb.firebaseio.com/")
+						.build();
 				
 				FirebaseApp.initializeApp(options);
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
